@@ -1,4 +1,5 @@
 @use "../../responsive.scss";
+
 .searchBar {
   .types {
     button {
@@ -13,11 +14,11 @@
         color: white;
       }
       &:first-child {
-        border-top-left-radius: 10px;
+        border-top-left-radius: 5px;
         border-right: none;
       }
       &:last-child {
-        border-top-right-radius: 10px;
+        border-top-right-radius: 5px;
         border-left: none;
       }
     }
@@ -28,14 +29,42 @@
     justify-content: space-between;
     height: 64px;
     gap: 5px;
+    @include responsive.sm {
+      flex-direction: column;
+      border: none;
+    }
 
     input {
       border: none;
       padding: 0px 10px;
       width: 200px;
 
-      @include responsive.lg{
-        width: 140px;
+      @include responsive.lg {
+        padding: 0px 5px;
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 140px;
+        }
+      }
+
+      @include responsive.sm {
+        width: 200px;
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 200px;
+        }
+      }
+      @include responsive.sm {
+        width: auto;
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: auto;
+        }
+      }
+      @include responsive.sm {
+        padding: 20px;
+        border: 1px solid #999;
       }
     }
     button {
@@ -43,9 +72,11 @@
       background-color: #fece51;
       flex: 1;
       cursor: pointer;
-   
 
-      img{
+      @include responsive.sm {
+        padding: 20px;
+      }
+      img {
         width: 24px;
         height: 24px;
       }

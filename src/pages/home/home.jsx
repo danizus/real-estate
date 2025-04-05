@@ -7,7 +7,7 @@ export default function Homepage() {
     <div className="homePage">
       <div className="textContainer">
         <div className="wrapper">
-          <h1>
+          <h1 className="title">
             Find Your Dream Home – Explore, Discover, and Invest with
             Confidence!
           </h1>
